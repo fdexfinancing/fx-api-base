@@ -19,6 +19,7 @@
   "dependencies": {
     "async": "^2.0.1",
     "json2csv": "^3.7.0",
+    "pg": "^6.1.0",
     "underscore": "^1.8.3",
     "underscore.string": "^3.3.4"
   }

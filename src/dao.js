@@ -24,7 +24,7 @@ class Dao extends db {
         });
 
         let query = ` select total_items, ${model.table}.* ${(selectLeftFields.length > 0 ? `, ${selectLeftFields}` : "")}
-                                    from (select count(*) OVER() as total_items, ${selectFields.toString()}`;
+                        from (select count(*) OVER() as total_items, ${selectFields.toString()}`;
         if (params.specialField)
             query += `, ${params.specialField}`;
 
@@ -290,7 +290,7 @@ class Dao extends db {
 
         super.exec(params.conn, query, values, (err, result) => {
             if(err)
-                return callback(err);
+            return callback(err);
 
             callback(null, result.rows);
         });
@@ -474,4 +474,3 @@ class Dao extends db {
 }
 
 module.exports = Dao;
-

@@ -4,7 +4,6 @@ const pg = require('pg');
 pg.defaults.poolSize = 20;
 
 class db {
-    var url = '';
 
     dbConnection(_dbconfig){
         this.url = !_dbconfig.user || !_dbconfig.password ? `pg://${_dbconfig.host}/${_dbconfig.name}${_dbconfig.options}` : `pg://${_dbconfig.user}:${_dbconfig.password}@${_dbconfig.host}/${_dbconfig.name}${_dbconfig.options}`;
