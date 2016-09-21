@@ -1,7 +1,6 @@
 'use strict';
 
 const Model = require('../src/model');
-const assert = require('assert');
 const myModel = new Model();
 
 describe("Model unit tests", () => {
