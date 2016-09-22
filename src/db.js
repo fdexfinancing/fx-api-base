@@ -5,7 +5,7 @@ pg.defaults.poolSize = 20;
 
 class db {
     constructor(_dbconfig){
-        this.url = !_dbconfig.user || !_dbconfig.password ? `pg://${_dbconfig.host}/${_dbconfig.name}${_dbconfig.options}` : `pg://${_dbconfig.user}:${_dbconfig.password}@${_dbconfig.host}/${_dbconfig.name}${_dbconfig.options}`;
+        this.url = !dbconfig.user || !dbconfig.password ? `pg://${dbconfig.host}/${dbconfig.database}${dbconfig.options}` : `pg://${dbconfig.user}:${dbconfig.password}@${dbconfig.host}/${dbconfig.database}${dbconfig.options}`;
     }
 
     transactional(callback) {

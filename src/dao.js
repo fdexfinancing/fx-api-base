@@ -3,7 +3,7 @@ const db = require("./db");
 
 class Dao extends db {
     constructor(_dbconfig){
-        super.dbConnection(_dbconfig);
+        super(_dbconfig);
     }
 
     getAll(model, params, callback) {
@@ -72,6 +72,8 @@ class Dao extends db {
     insertObj(obj, params, callback) {
         params = params || {};
         obj.created_at = new Date();
+        obj.updated_at = new Date();
+        obj.is_active = obj.is_active || obj.is_active == false ? obj.is_active : true;
         const fields = [];
         const values = [];
         const aux_values = [];

@@ -17,9 +17,9 @@ class Model {
             this.leftJoin = [];
             this.columns = [];
             this.leftColumns = [];
-        }
 
-        this.path = path || '../model';
+            this.path = path || '../model';
+        }
     }
 
     include(name, opt) {
