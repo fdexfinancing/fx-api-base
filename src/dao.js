@@ -2,7 +2,7 @@
 const db = require("./db");
 
 class Dao extends db {
-    dbConnection(_dbconfig){
+    constructor(_dbconfig){
         super.dbConnection(_dbconfig);
     }
 
