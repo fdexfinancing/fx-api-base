@@ -1,13 +1,15 @@
 "use strict";
 
-const helper = require('./src/helper');
+const Helper = require('./src/helper');
+const Auth = require('./src/dao');
 const Dao = require('./src/dao');
 const Model = require('./src/model');
-const globalErrors = require('./src/globalError');
+const GlobalErrors = require('./src/globalError');
 
 module.exports = {
-    helper,
+    Helper,
     Model,
     Dao,
-    globalErrors
+    Auth,
+    GlobalErrors
 };
