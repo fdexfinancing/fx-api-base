@@ -48,8 +48,8 @@ class helper {
         const init = fileName.indexOf('.');
         const end = fileName.length;
 
-        if(init && end)
-            return fileName.substr(init,end);
+        if (init && end)
+            return fileName.substr(init, end);
 
         return '';
     }
@@ -202,11 +202,20 @@ class helper {
         });
     }
 
-    dynamici18nString(message){
-        if(message && typeof(message) == 'string')
-            return message.search(/[a-z]\.[a-z]/i) >= 0 ?  i18n.__(message) : message;
+    dynamici18nString(message) {
+        if (message && typeof(message) == 'string')
+            return message.search(/[a-z]\.[a-z]/i) >= 0 ? i18n.__(message) : message;
 
         return '';
+    }
+
+    IsJsonString(str) {
+        try {
+            JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return true;
     }
 }
 
