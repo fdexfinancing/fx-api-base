@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt-nodejs');
 const jwt = require('jsonwebtoken');
 const jwtSecret = require("./config.json").jwtSecret;
 
-class auth {
+class Auth {
 
     verifyPassword(password, hash, callback) {
 
@@ -88,5 +88,5 @@ class auth {
     }
 }
 
-module.exports = db;
+module.exports = Auth;
 
