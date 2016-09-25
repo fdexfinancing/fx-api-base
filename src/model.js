@@ -73,7 +73,8 @@ class Model {
             join: {notBind: true},
             leftJoin: {notBind: true},
             columns: {notBind: true},
-            leftColumns: {notBind: true}
+            leftColumns: {notBind: true},
+            path: {notBind: true}
         }
     }
 }
