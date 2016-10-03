@@ -72,11 +72,13 @@ class Dao extends db {
     insertObj(obj, params, callback) {
         params = params || {};
         obj.created_at = new Date();
-        obj.updated_at = new Date();
         delete obj.id;
         const obj_prop = Object.getOwnPropertyNames(obj);
         if(obj_prop.hasOwnProperty('is_active')) {
             obj.is_active = obj.is_active || obj.is_active == false ? obj.is_active : true;
+        }
+        if(obj_prop.hasOwnProperty('updated_at')) {
+            obj.updated_at = new Date();
         }
         const fields = [];
         const values = [];
