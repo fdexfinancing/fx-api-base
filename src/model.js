@@ -11,14 +11,12 @@
 }
 */
 class Model {
-    constructor(opt, path) {
+    constructor(opt) {
         if (opt && opt.show) {
             this.join = [];
             this.leftJoin = [];
             this.columns = [];
             this.leftColumns = [];
-
-            this.path = path || '../../../model';
         }
     }
 
@@ -31,18 +29,16 @@ class Model {
         name = nameArr[nameArr.length - 1];
 
         if (nameArr.length > 1) {
-            modelAux = new (require(`${this.path}/${this.annotation[nameArr[0]].model}`))();
+            modelAux = new this.annotation[nameArr[0]].model();
 
             for(let i=1; i < (nameArr.length-1); i++){
-                modelAux = new (require(`${this.path}/${modelAux.annotation[nameArr[nameArr.length - (nameArr.length - i)]].model}`))()
+                modelAux = new modelAux.annotation[nameArr[nameArr.length - (nameArr.length - i)]].model()
             }
         }
         else
             modelAux = this;
 
-        const m = require(`${this.path}/${modelAux.annotation[nameArr[nameArr.length - 1]].model}`);
-
-        model = new m();
+        model = new modelAux.annotation[nameArr[nameArr.length - 1]].model();
 
         const key = opt.left ? 'leftJoin' : 'join';
 
