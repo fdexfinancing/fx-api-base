@@ -333,8 +333,12 @@ class Dao extends db {
         let clause_str = "";
 
         for (const i in params.clause) {
-            values.push(params.clause[i]);
-            clause_str += ` and ${table}.${i}=$${++count}`;
+            if (i == 'raw') {
+                clause_str += ` and ${table}.${params.clause[i]}`;
+            }  else {
+                values.push(params.clause[i]);
+                clause_str += ` and ${table}.${i}=$${++count}`;
+            }
         }
 
         query += `${clause_str} RETURNING *`;
