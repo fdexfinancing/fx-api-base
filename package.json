@@ -10,9 +10,9 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/egenius/fx-api-base.git"
   },
-  "author": "Fdex It <ti@fdex.com.br> (fdex.com.br)",
+  "author": "F(x) IT <ti@fdex.com.br> (fdex.com.br)",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/egenius/fx-api-base#readme",
+  "homepage": "https://github.com/fdexfinancing/fx-api-base",
   "devDependencies": {
     "mocha": "^3.0.2"
   },
