@@ -1,6 +1,6 @@
 {
   "name": "fx-api-base",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Base module for api projects",
   "main": "index.js",
   "scripts": {
