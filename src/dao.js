@@ -23,7 +23,7 @@ class Dao extends db {
             });
         });
 
-        let query = ` select total_items, ${model.table}.* ${(selectLeftFields.length > 0 ? `, ${selectLeftFields}` : "")}
+        let query = ` select total_items, ${model.table}.* ${(selectLeftFields.length > 0 ? `, ${selectLeftFields}` : "")} ${(params.leftSpecialField ? `, ${params.leftSpecialField}` : "")}
                         from (select count(*) OVER() as total_items, ${selectFields.toString()}`;
         if (params.specialField)
             query += `, ${params.specialField}`;
