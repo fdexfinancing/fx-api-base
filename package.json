@@ -1,6 +1,6 @@
 {
   "name": "fx-api-base",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Base module for api projects",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/egenius/fx-api-base.git"
+    "url": "git://git@github.com:fdexfinancing/fx-api-base.git"
   },
   "author": "F(x) IT <ti@fdex.com.br> (fdex.com.br)",
   "license": "ISC",
