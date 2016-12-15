@@ -11,6 +11,14 @@ class Dao extends db {
         const selectFields = [];
         const selectLeftFields = [];
 
+        if(params.include) {
+            _.each(params.include, (include) => {
+                model.include(include.model, {fields: include.fields, left: include.left});
+            });
+
+            model.columns.push(model.setColumns(model, params.fields, null, false));
+        }
+
         _.each(model.columns, (column) => {
             _.each((column.fields || {}).replace(/ /g, "").split(","), (field) => {
                 const prop = column.model.annotation[field];
